@@ -1,6 +1,10 @@
 #automated the deployment process of openshift local for testing, development purpose in a single-node cluster
 #!/bin/bash
 
+echo "Download the OC and CRC packages..."
+wget https://developers.redhat.com/content-gateway/rest/mirror/pub/openshift-v4/clients/crc/latest/crc-linux-amd64.tar.xz
+wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz
+
 # Check nested virtualization's status
 echo "Checking if nested virtualization is enabled..."
 if lsmod | grep -woq 'kvm' && lsmod | grep -woq 'kvm_amd'; then
