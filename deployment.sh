@@ -399,9 +399,6 @@ else
    exit 1
 fi
 
-
-#!/bin/bash
-
 # Get CRC IP and validate
 CRC_IP=$(crc ip 2>/dev/null | tr -d '[:space:]')
 if [[ ! "$ip" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
